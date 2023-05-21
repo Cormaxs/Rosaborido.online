@@ -1,0 +1,299 @@
+*{
+	padding: 0; margin: 0 auto;
+	box-sizing: border-box;
+	text-align: center;
+	letter-spacing: 1.4px;
+	font-family: arial, helvetica, sans-serif;
+}
+/*BUSCADOR*/
+#buscador{
+    width: 100%;
+    height: 60px;
+    background: #e05656;
+    padding-top: 15px;
+}
+
+#input-search{
+    width: 200px;
+    height: 30px;
+    font-size: 15px;
+    text-indent: 10px;
+    letter-spacing: 5px;
+    text-align: left;
+}
+
+.content-search{
+	border-radius: 10px;
+	margin-left:20%;
+    width: 99%;
+    height: 100%;
+    margin-left: -.1%;
+    position: fixed;
+    background: rgba(205,205,205, 0.2);
+    display: none;
+}
+
+.content-table{
+    width: 100%;
+    max-height: 500px;
+    height: 250px;
+    background: rgba(0,0,0,0.3);
+    overflow-y: visible;
+    overflow-x: hidden;
+}
+
+.content-table table{
+    width: 100%;
+}
+
+tbody tr td a{
+	font-size: 25px;
+    display: block;
+    padding: 10px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+tbody tr td a:hover{
+    background: rgba(0,0,0,0.3);
+}
+
+#table_length, #table_filter, #table_info, #table_paginate{
+    display: none;
+}
+
+
+/*termina buscador*/
+
+
+
+
+body{
+	background: #333333;
+}
+
+#encabezado{
+	background: #B71C1C;
+	text-align: center;
+	letter-spacing: 5px;
+}
+
+
+#encabezado > a{
+	padding: 25px;
+	text-decoration: none; 
+	color: white;
+}
+#encabezado a > h1{
+	margin-top: 25px;
+	display: inline-block;
+}
+
+#encabezado a > p{
+	max-width: 25%;
+	margin-top: 15px;
+} 
+
+main{
+	display: none;/*oculta lo que tengo*/
+	margin-top: 50px;
+	width: 80%;
+}
+#secciones ul li > a{
+padding: 5px 50px 5px 50px;
+text-decoration: none;
+color: #000066;
+font-size: 20px;
+font-family: voga;
+}
+
+#secciones ul > li{
+	padding: 5px 20px 5px 20px;
+	margin: 10px 50px 10px 50px;
+	background: #FCFAFA;
+	border-bottom: 1px solid;
+	border-radius: 20px;
+	display: inline-block;
+	list-style: none;
+}
+
+/* HOVER Y EFECTOS DE MENU */
+#secciones ul > li:hover{
+	transition: .9s all;
+	background: #E0E0E0;
+}
+
+
+#container{
+	margin: 50px auto;
+	width: 60%;  height:auto;
+}
+
+#container > section{
+
+background: #ECECEC;
+margin: 10px;
+display: inline-block;
+text-align: center;
+border-radius: 10px;
+width: 200px; min-height: 295.97px;
+
+}
+
+#container section  p{
+	color: #1e73be;
+	overflow: hidden;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	width: 144.5px; 
+	height: 44px;
+	font-size: 14.4px;
+	font-family: "comic sans ms", sans-serif;
+}
+
+#container  section a > img{
+	border-radius: 10px 10px 0px 0px;
+	transition: .5s all;
+	object-fit: cover;
+	width: 200px;
+	height: 295.97px;
+}
+#container  section a > img:hover{
+	transition: .5s all;
+	opacity: .7;
+}
+#container section a{
+	text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer{
+	overflow: hidden;
+	margin-top: 100px;
+	width: 100%;
+	max-height: 500px;
+	background: #202020;
+}
+
+#final ul li > a{
+
+padding: 10px 50px 10px 50px;
+text-decoration: none;
+color: #ffffff;
+font-size: 20px;
+}
+
+#final{
+	padding: 50px;
+	width: 90%;
+}
+	
+#final ul > li{
+
+	margin: 10px 50px 10px 50px;
+	display: inline-block;
+	list-style: none;
+}
+
+#final p{
+	margin-top: 100px;
+	font-size: 25px;
+	color: #ffffff;
+}
+
+
+
+
+/*MEDIAS QUERRY*/
+
+
+@media screen and (max-width:539px) and (min-width:250px){/*CELULARES*/
+
+
+#container {
+
+width: 98%;
+	
+}
+
+#container  section a > img{
+width: 167.5px;  height: 239.28px;
+
+}
+
+#container  section{
+	width:167.5px; height: 284.28px;
+	margin: 4px;
+	
+}
+
+
+
+#encabezado p{
+	min-width: 60%;
+	font-size: 15px;
+}
+
+ 
+#secciones ul li > a{
+padding: 5px 40px 5px 40px;
+} 
+
+
+
+.content-search{
+	margin-left: -2%;
+}
+
+}
+
+
+
+
+@media screen and (max-width:671px) and (min-width:540px){/*PEQUEÑO*/
+
+	}
+
+
+
+
+@media screen and (max-width:799px) and (min-width:672px){/*MEDIANO*/
+
+}
+
+
+
+
+@media screen and (max-width:1300px) and (min-width:800px){/*GRANDE*/
+
+
+#container {
+
+width: 65%;
+	
+}
+
+#container  section a > img{
+width: 167.5px;  height: 239.28px;
+
+}
+
+#container  section{
+	width:167.5px; height: 284.28px;
+	margin: 4px;
+	
+}
+	}
