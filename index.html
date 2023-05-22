@@ -8,8 +8,7 @@
     <ul id="recetas"></ul>
     <script src="script.js"></script>
   </body>
-
 <script>
-fetch('https://raw.githubusercontent.com/Cormaxs/Rosaborido.online/main/recetas/Receta.txt') .then(response => response.text()) .then(data => { const contenido = data; alert(contenido); }) .catch(error => alert(error));
+fetch('https://raw.githubusercontent.com/Cormaxs/Rosaborido.online/main/recetas/Receta.txt') .then(response => response.text()) .then(data => { const receta = JSON.parse(data); const recetas = [receta]; const recetasList = document.getElementById('recetas'); recetas.forEach(receta => { const li = document.createElement('li'); li.textContent = receta.nombre; recetasList.appendChild(li); }); }) .catch(error => console.error(error));
 </script>
 </html>
