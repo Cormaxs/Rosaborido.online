@@ -1,14 +1,32 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Ejemplo de petición Fetch</title>
-  </head>
-  <body>
-    <h1>Recetas</h1>
-    <ul id="recetas"></ul>
-    <script src="script.js"></script>
-  </body>
+<form>
+  <label for="archivo">Selecciona un archivo:</label>
+  <input type="file" id="archivo" name="archivo">
+  <button type="submit">Subir archivo</button>
+</form>
+
 <script>
-fetch('https://raw.githubusercontent.com/Cormaxs/Rosaborido.online/main/recetas/Receta.txt') .then(response => response.text()) .then(data => { const receta = JSON.parse(data); const recetas = [receta]; const recetasList = document.getElementById('recetas'); recetas.forEach(receta => { const li = document.createElement('li'); li.textContent = receta.nombre; recetasList.appendChild(li); }); }) .catch(error => console.error(error));
+  const form = document.querySelector('form');
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+    const file = event.target.archivo.files[0];
+    const formData = new FormData();
+    formData.append('file', file, file.name);
+
+    fetch('https://api.github.com/repos/Cormaxs/Rosaborido.online/contents/recetas/' + file.name, {
+      method: 'PUT',
+      headers: {
+        'Authorization': 'token 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',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        message: 'Agregando archivo',
+        content: formData.get('file')
+      })
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Respuesta del servidor:', data);
+    })
+    .catch(error => console.error(error));
+  });
 </script>
-</html>
