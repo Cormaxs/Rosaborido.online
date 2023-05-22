@@ -1,80 +1,27 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Rosaborido.online</title>
-  <link rel="stylesheet" href="index.css">
-  <style>
-    .menu {
-      display: flex;
-      justify-content: center;
-    }
-    .menu ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-    }
-    .menu li {
-      margin-right: 20px;
-    }
-    .menu a {
-      color: #333;
-      text-decoration: none;
-    }
-    .menu a:hover {
-      color: #666;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <center><h1>Rosaborido.online</h1></center>
-    <nav class="menu">
-      <ul>
-        <li><a href="#">Saludable</a></li>
-        <li><a href="#">Fácil de hacer</a></li>
-        <li><a href="#">Barato</a></li>
-        <li><a href="#">Rico</a></li>
-        <li><a href="#">Otro</a></li>
-      </ul>
-    </nav>
-  </header>
-<!--
-  <main>
-    <section class="receta">
-      <h2>Nombre de la receta</h2>
-      <img src="imagen.jpg" alt="Imagen de la receta">
-      <ul class="ingredientes">
-        <li>Ingrediente 1</li>
-        <li>Ingrediente 2</li>
-        <li>Ingrediente 3</li>
-      </ul>
-      <ol class="pasos">
-        <li>Paso 1</li>
-        <li>Paso 2</li>
-        <li>Paso 3</li>
-      </ol>
-    </section>
-    
-  </main><!-- Agregar más secciones de recetas aquí -->
- <!-- New section for file upload -->
-    <section class="upload">
-      <h2>Subir archivos</h2>
-      <form action="/upload" method="POST" enctype="multipart/form-data">
-        <label for="file">Seleccionar archivo:</label>
-        <input type="file" id="file" name="file">
-        <br><br>
-       <center> <button type="submit">Subir archivo</button></center>
-      </form>
-    </section>
 
-  <footer>
-    <p>Derechos reservados &copy; 2023 Recetas de cocina</p>
-  </footer>
-</body>
-  
-  <script>
-    fetch('https://raw.githubusercontent.com/Cormaxs/Rosaborido.online/main/recetas/Receta.txt') .then(response => response.text()) .then(data => { const contenido = data; alert(contenido); }) .catch(error => alert(error));
-    <\script>
+<html>
+
+  <head>
+
+    <title>Ejemplo de petición Fetch</title>
+
+  </head>
+
+  <body>
+
+    <h1>Recetas</h1>
+
+    <ul id="recetas"></ul>
+
+    <script src="script.js"></script>
+
+  </body>
+
+<script>
+
+fetch('https://raw.githubusercontent.com/Cormaxs/Rosaborido.online/main/recetas') .then(response => response.text()) .then(data => { const recetas = JSON.parse(data); const recetasList = document.getElementById('recetas'); recetas.forEach(receta => { const li = document.createElement('li'); li.textContent = receta.nombre; recetasList.appendChild(li); }); }) .catch(error => console.error(error));
+
+</script>
+
 </html>
