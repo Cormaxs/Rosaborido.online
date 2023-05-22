@@ -73,4 +73,20 @@
     <p>Derechos reservados &copy; 2023 Recetas de cocina</p>
   </footer>
 </body>
+  
+  <script>
+    fetch('https://github.com/Cormaxs/Rosaborido.online/tree/main/recetas')
+
+  .then(response => response.json())
+
+  .then(data => {
+
+    const posts = data;
+
+    alert(posts);
+
+  })
+
+  .catch(error => alert.error(error));
+    <\script>
 </html>
