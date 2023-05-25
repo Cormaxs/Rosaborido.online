@@ -2,13 +2,158 @@
   margin: 0; padding: 0;
   box-sizing: border-box;
 }
+body{
+ background-color: #ECF8F9;
+}
 
+/*empieza cabeza*/
 #cabeza {
+  height: 200px;
   border-bottom: 1px solid;
   text-align: center;
   padding-top: 20px; padding-bottom: 20px;
-  margin-bottom: 30px;
-  background-image: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%);
+  background-image: url(https://cdn.pixabay.com/photo/2016/12/26/17/28/spaghetti-1932466_960_720.jpg);
+  background-repeat:repeat-x;
+}
+#cabeza h1{
+  letter-spacing: 10px;
+  color: rgb(255, 255, 255);
+  margin-top: 50px;
+}
+#cabeza h1 > a{
+  text-decoration: none;
+  color: #ffffff;
+}
+
+#cabeza h1 > a:hover{
+  transition:1.5s;
+  letter-spacing: 20px;
+  transition-delay:1s;
 }
 
 /*Menu*/
+@keyframes pulse {
+  10% {
+    background-color: #27374D;
+    opacity: 1;
+  }
+  35% {
+    background-color: #116D6E;
+    opacity: 0.7;
+  }
+  65% {
+    background-color: #7C96AB;
+    opacity: 0.7;
+  }
+  100% {
+    background-color: #2F58CD;
+    opacity: 1;
+  }
+}
+
+#menu {
+text-align: center;
+width: 100%; max-height: 150px;
+background-color: #C1D0B5;
+}
+#menu ul li{
+  margin: 30px;
+}
+
+#menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#menu ul li {
+ display: inline-block;
+  position: relative;
+}
+
+#menu ul li a {
+  padding: 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: black;
+}
+#menu ul li :hover{
+  color: #ECF8F9;
+  animation: pulse 5s infinite alternate;
+}
+
+#menu ul li:hover ul {
+  display: block;
+}
+
+#menu ul ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: -30%;
+}
+
+#menu ul ul li {
+  display: block;
+}
+/*Termina menu*/
+
+/*Empiesa recetas */
+
+#recetas{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Crea dos columnas con un ancho igual */
+  grid-gap: 10px; /* Agrega un espacio de 10px entre los elementos */
+  margin: 50px auto;
+  width: 95%; height: 1000px;
+  border-radius: 10px;
+  background-color: #EC994B;
+}
+
+#recetas div{
+  background-color: #EDE4E0;
+  padding-top: 10px;
+  text-align: center;
+  margin: auto;
+  border-radius: 5px;
+  width: 300px; height: 310px;
+}
+
+#recetas div > a{
+  width: 300px; height: 310px;
+  text-decoration: none;
+  color: #000000;
+}
+#recetas div a > img{
+  margin-top: 10px;
+  border-radius: 5px;
+  width: 95%; height: 89%;
+  object-fit: cover; /* Ajusta la imagen al tamaño del contenedor */
+}
+
+
+/*empieza footer*/
+
+footer{
+  padding-top: 20px;
+  text-align: center;
+  width: 100%;
+  height: 300px;
+  background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%);
+ background-blend-mode: multiply;
+}
+
+footer div div > a{
+  text-decoration: none;
+  color: #ffffff;
+}
+footer div{
+  margin: 20px auto;
+  width: 90%;
+}
+
+footer div div{
+  width: 50%;
+  border-radius: 20px;
+  padding: 10px;
+}
